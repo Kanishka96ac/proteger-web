@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - main
+      - main  # Trigger the workflow on push to the main branch
 
 jobs:
   deploy:
@@ -11,13 +11,21 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4  # Check out the repository
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
       with:
-        submodules: false
+        node-version: '14'  # Specify Node.js version
+
+    - name: Install dependencies and build
+      run: |
+        npm install  # Install dependencies (if any)
+        npm run build  # Build the project (if applicable)
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
-        publish_branch: gh-pages
+        publish_dir: ./  # Directory to publish (root directory in this case)
+        publish_branch: gh-pages  # The branch to publish to
