@@ -1,0 +1,31 @@
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  #footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Top and bottom padding */
+    width: 100%; /* Full width */
+    position: relative; /* Ensure footer is positioned correctly */
+    text-align: right; /* Center align text */
+    box-sizing: border-box; /* Ensure padding is included in width */
+  }
+  
+  .footer-text {
+    font-size: 24px; /* Larger font size for the title */
+    font-weight: bold;
+    margin: 0; /* Remove margin */
+  }
+  
+  .footer-slogan {
+    font-size: 14px; /* Slightly smaller font size for the slogan */
+    margin: 10px 0; /* Margin for spacing between text */
+  }
+  
+  .footer-year {
+    font-size: 12px; /* Smaller font size for the year */
+    margin: 0; /* Remove margin */
+  }
+  
